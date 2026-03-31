@@ -1,0 +1,73 @@
+/* ========================================
+   TOPBAR
+   ======================================== */
+
+.topbar {
+  background-color: var(--color-dark);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.topbar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.topbar__item i {
+  width: 14px;
+  height: 14px;
+  color: var(--color-green);
+  flex-shrink: 0;
+}
+
+.topbar__item a {
+  color: var(--color-white);
+  transition: color var(--transition-fast);
+}
+
+.topbar__item a:hover {
+  color: var(--color-green);
+}
+
+.topbar__divider {
+  width: 1px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+/* Mobile: solo telefono */
+.topbar__item--email,
+.topbar__item--locations,
+.topbar__divider:nth-child(2),
+.topbar__divider:nth-child(4) {
+  display: none;
+}
+
+/* Tablet: mostrar todo */
+@media (min-width: 768px) {
+  .topbar__item--email,
+  .topbar__item--locations,
+  .topbar__divider:nth-child(2),
+  .topbar__divider:nth-child(4) {
+    display: flex;
+  }
+
+  .topbar__divider:nth-child(2),
+  .topbar__divider:nth-child(4) {
+    display: block;
+  }
+}
